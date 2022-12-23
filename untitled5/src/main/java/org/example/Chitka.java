@@ -15,19 +15,15 @@ public class Chitka {
             str = new String(en);
         } catch (IOException e){
             e.printStackTrace();
+           }
+        Scanner newstr = new Scanner(str);
+        int wordcount = 0; //обнулили кол-во слов
+        
+        while (str.hasNextLine()){
+            String[] array = newstr.nextLine().split(" "); // добавление каждого слова в массив
+            wordcount = wordcount + array.length;
         }
-        int count = 0; //обнулили кол-во слов
-
-        if(str.length() != 0){
-            count++;
-            for (int i = 0; i < str.length(); i++){ //проверка символа на пробел
-                if (str.charAt(i) == ' '){
-                    count++;
-                }
-            }
-
-        }
-        System.out.println(count);
+        System.out.println(wordcount);
     }
 
 }

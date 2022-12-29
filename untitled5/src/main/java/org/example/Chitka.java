@@ -19,11 +19,11 @@ public class Chitka {
         Scanner newstr = new Scanner(str);
         int wordcount = 0; //обнулили кол-во слов
         
-        while (str.hasNextLine()){
+        //while (str.hasNextLine()){
             String[] array = newstr.nextLine().split(" "); // добавление каждого слова в массив
             wordcount = wordcount + array.length;
         }
-        System.out.println(wordcount);
+        //System.out.println(wordcount);
     }
 
 }

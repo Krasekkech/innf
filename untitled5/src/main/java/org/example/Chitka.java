@@ -10,6 +10,7 @@ import java.util.Set;
 
 public class Chitka {
     public static void main(String[] args) {
+        //..............Читаем текст...............
         Path path = Paths.get("test.txt");
         String str = null;
         try {
@@ -18,15 +19,17 @@ public class Chitka {
         } catch (IOException e){
             e.printStackTrace();
         }
+        //..........Подсчет слов...........
         Scanner newstr = new Scanner(str);
         int wordcount = 0; //обнулили кол-во слов
         
-        while (newstr.hasNextLine()){
+        while (newstr.hasNextLine()){ //
             String[] array = newstr.nextLine().split(" "); // добавление каждого слова в массив
             wordcount = wordcount + array.length;
         }
         System.out.println(wordcount);
 
+        //.........Поиск повторений слов.........
         HashMap<String, Integer> map = new HashMap<>();
         String array2[] = str.split(" ");
         for (String s : array2){
@@ -38,10 +41,10 @@ public class Chitka {
             }
 
         }
+        //.......Вывод данных.......
         Set<String> keys = map.keySet();
         for (String key : keys) {
             System.out.println(key + " " + "-" + " " + map.get(key));
-            //System.out.println(map.get(key));
         }
     }
 
